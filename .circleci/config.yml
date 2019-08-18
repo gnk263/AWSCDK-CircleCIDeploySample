@@ -56,10 +56,12 @@ jobs:
           command: |
             source .venv/bin/activate
 
+            python --version
             aws --version
             npm --version
             node --version
-            cdk --version
+
+            npm run cdkversion
 
             echo << parameters.env >>
 
@@ -79,10 +81,12 @@ jobs:
           command: |
             source .venv/bin/activate
 
+            python --version
             aws --version
             npm --version
             node --version
-            cdk --version
+
+            npm run cdkversion
 
             echo << parameters.env >>
 
