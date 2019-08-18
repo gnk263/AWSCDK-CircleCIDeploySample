@@ -94,7 +94,7 @@ jobs:
 
             npx cdk diff ${TARGET_APP_STACK_NAME}
 
-            yes | npx cdk deploy ${TARGET_APP_STACK_NAME}
+            npx cdk deploy --require-approval never ${TARGET_APP_STACK_NAME}
 
 workflows:
   version: 2.1
