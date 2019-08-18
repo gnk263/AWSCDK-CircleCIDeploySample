@@ -10,8 +10,9 @@ export class CircleCIUserStack extends cdk.Stack {
       userName: `aws-cdk-circleci-deploy-user-${systemEnv}`,
       managedPolicies: [
         ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaFullAccess'),
-        //ManagedPolicy.fromAwsManagedPolicyName('AmazonAPIGatewayAdministrator'),
-        //ManagedPolicy.fromAwsManagedPolicyName('AWSCloudFormationFullAccess'),
+        ManagedPolicy.fromAwsManagedPolicyName('AmazonAPIGatewayAdministrator'),
+        ManagedPolicy.fromAwsManagedPolicyName('AWSCloudFormationFullAccess'),
+        ManagedPolicy.fromAwsManagedPolicyName('IAMFullAccess'),
       ]
     })
   }
