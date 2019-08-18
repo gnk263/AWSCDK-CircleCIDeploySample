@@ -8,9 +8,6 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "cdkversion": "cdk --version",
-    "cdksynth": "cdk synth",
-    "cdkdeploy": "cdk deploy"
   },
   "devDependencies": {
     "@types/node": "8.10.45",

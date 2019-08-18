@@ -39,7 +39,7 @@ jobs:
           command: |
             sudo pip install pipenv
             pipenv install
-            npm install --dev
+            npm install
       - save
 
   build:
@@ -60,12 +60,7 @@ jobs:
             aws --version
             npm --version
             node --version
-
-            npm run cdkversion
-
             npx cdk --version
-
-            cdk --version
 
             echo << parameters.env >>
 
@@ -89,8 +84,7 @@ jobs:
             aws --version
             npm --version
             node --version
-
-            npm run cdkversion
+            npx cdk --version
 
             echo << parameters.env >>
 
