@@ -90,7 +90,11 @@ jobs:
 
             source ./scripts/set_aws.sh << parameters.env >>
 
-            npx cdk deploy -y AWS-CDK-CircleCI-Deploy-Sample-<< parameters.env >>
+            export TARGET_APP_STACK_NAME=AWS-CDK-CircleCI-Deploy-Sample-<< parameters.env >>
+
+            npx cdk diff ${TARGET_APP_STACK_NAME}
+
+            yes | npx cdk deploy ${TARGET_APP_STACK_NAME}
 
 workflows:
   version: 2.1
