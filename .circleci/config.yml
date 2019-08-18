@@ -39,7 +39,7 @@ jobs:
           command: |
             sudo pip install pipenv
             pipenv install
-            npm install
+            npm install --dev
       - save
 
   build:
@@ -62,6 +62,8 @@ jobs:
             node --version
 
             npm run cdkversion
+
+            cdk --version
 
             echo << parameters.env >>
 
