@@ -2,6 +2,8 @@
 
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-envvars.html
 
+echo AWS ENV setting: $1
+
 export SYSTEM_ENV=$1
 export AWS_DEFAULT_REGION="ap-northeast-1"
 export AWS_DEFAULT_OUTPUT="json"
