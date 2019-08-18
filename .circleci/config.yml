@@ -88,6 +88,8 @@ jobs:
 
             echo << parameters.env >>
 
+            aws s3 ls
+
 workflows:
   version: 2.1
   release-dev-workflow:
