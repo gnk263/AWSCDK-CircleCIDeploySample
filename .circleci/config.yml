@@ -2,8 +2,9 @@ version: 2.1
 executors:
   my-executor:
     # https://circleci.com/docs/2.0/circleci-images/
+    # https://circleci.com/docs/2.0/docker-image-tags.json
     docker:
-      - image: circleci/python:3.7.0-node
+      - image: circleci/python:3.7.2-node
         environment:
           PIPENV_VENV_IN_PROJECT: true
     working_directory: ~/CircleCIDeploySample
