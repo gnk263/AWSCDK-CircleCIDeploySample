@@ -90,7 +90,7 @@ jobs:
 
             source ./scripts/set_aws.sh << parameters.env >>
 
-            aws s3 ls
+            npx cdk deploy AWS-CDK-CircleCI-Deploy-Sample-<< parameters.env >>
 
 workflows:
   version: 2.1
