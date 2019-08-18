@@ -90,7 +90,7 @@ jobs:
 
             source ./scripts/set_aws.sh << parameters.env >>
 
-            export TARGET_APP_STACK_NAME=AWS-CDK-CircleCI-Deploy-Sample-<< parameters.env >>
+            export TARGET_APP_STACK_NAME=AWS-CDK-CircleCI-Deploy-Sample-App-Stack-<< parameters.env >>
 
             npx cdk diff ${TARGET_APP_STACK_NAME}
 
