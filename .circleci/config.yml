@@ -88,6 +88,8 @@ jobs:
 
             echo << parameters.env >>
 
+            ./scripts/set_aws.sh
+
             aws s3 ls
 
 workflows:
