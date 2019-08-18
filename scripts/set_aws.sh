@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-envvars.html
 
