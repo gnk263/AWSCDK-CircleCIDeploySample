@@ -76,7 +76,7 @@ jobs:
       - checkout
       - restore
       - run:
-          name: sam-deploy
+          name: deploy
           command: |
             source .venv/bin/activate
 
