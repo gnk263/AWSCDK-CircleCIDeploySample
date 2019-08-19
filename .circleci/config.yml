@@ -42,30 +42,6 @@ jobs:
             npm install
       - save
 
-  build:
-    executor: my-executor
-    parameters:
-      env:
-        type: enum
-        enum: ["prod", "dev"]
-    steps:
-      - checkout
-      - restore
-      - run:
-          name: build
-          command: |
-            source .venv/bin/activate
-
-            python --version
-            aws --version
-            npm --version
-            node --version
-            npx cdk --version
-
-            echo << parameters.env >>
-
-            npm run build
-
   deploy:
     executor: my-executor
     parameters:
@@ -107,20 +83,10 @@ workflows:
                 - master
                 - /^issues\/\d+$/
 
-      - build:
-          env: dev
-          requires:
-            - setup
-          filters:
-            branches:
-              only:
-                - master
-                - /^issues\/\d+$/
-
       - deploy:
           env: dev
           requires:
-            - build
+            - setup
           filters:
             branches:
               only:
@@ -137,21 +103,10 @@ workflows:
               only:
                 - /^v\d+\.\d+\.\d+$/
 
-      - build:
-          env: prod
-          requires:
-            - setup
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only:
-                - /^v\d+\.\d+\.\d+$/
-
       - deploy:
           env: prod
           requires:
-            - build
+            - setup
           filters:
             branches:
               ignore: /.*/
