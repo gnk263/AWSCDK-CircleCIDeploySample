@@ -92,6 +92,8 @@ jobs:
 
             export TARGET_APP_STACK_NAME=AWS-CDK-CircleCI-Deploy-Sample-App-Stack-<< parameters.env >>
 
+            npm run build
+
             npx cdk deploy --require-approval never ${TARGET_APP_STACK_NAME}
 
 workflows:
